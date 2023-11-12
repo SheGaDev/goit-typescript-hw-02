@@ -14,11 +14,11 @@ enum Day {
 }
 
 const isWeekend = (day: Day): boolean => {
-  return day <= 5;
+  return [Day.SATURSDAY, Day.SUNDAY].includes(day);
 };
 
 const message = (day: Day): void => {
-  if (isWeekend(day)) console.log("Is work day.");
+  if (!isWeekend(day)) console.log("Is work day.");
   else console.log("Is weekend.");
 };
 
